@@ -1,0 +1,61 @@
+{
+  "name": "nettrine/nettrine",
+  "description": "Doctrine meta package for Nette Framework",
+  "keywords": [
+    "nette",
+    "doctrine",
+    "dbal",
+    "orm",
+    "migrations",
+    "fixtures",
+    "cache",
+    "annotations"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/contributte/doctrine",
+  "authors": [
+    {
+      "name": "Milan Felix Šulc",
+      "homepage": "https://f3l1x.io"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "nettrine/dbal": "dev-next as 0.9.0",
+    "nettrine/orm": "dev-next as 0.9.0",
+    "nettrine/cache": "^0.5.0",
+    "nettrine/migrations": "^0.9.0",
+    "nettrine/fixtures": "^0.7.0",
+    "nettrine/annotations": "^0.9.0"
+  },
+  "require-dev": {
+    "contributte/qa": "^0.4",
+    "contributte/tester": "^0.3",
+    "contributte/phpstan": "^0.1",
+    "contributte/console": "^0.9.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nettrine\\Nettrine\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  }
+}
