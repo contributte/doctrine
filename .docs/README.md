@@ -70,18 +70,54 @@ nettrine:
 ### 1. Manual example
 
 ```sh
-composer require nettrine/nettrine
+composer require nettrine/migrations
+composer require nettrine/fixtures
+composer require nettrine/dbal
+composer require nettrine/orm
 ```
 
 ```neon
+# Extension > Nettrine
+# => order is crucial
+#
 extensions:
-  nettrine: Nettrine\Nettrine\DI\NettrineExtension
+  # Common
+  nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
+  nettrine.cache: Nettrine\Cache\DI\CacheExtension
+  nettrine.migrations: Nettrine\Migrations\DI\MigrationsExtension
+  nettrine.fixtures: Nettrine\Fixtures\DI\FixturesExtension
+
+  # DBAL
+  nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
+  nettrine.dbal.console: Nettrine\DBAL\DI\DbalConsoleExtension
+
+  # ORM
+  nettrine.orm: Nettrine\ORM\DI\OrmExtension
+  nettrine.orm.cache: Nettrine\ORM\DI\OrmCacheExtension
+  nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension
+  nettrine.orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
 ```
 
 ### 2. Example projects
 
 We've made a few skeletons with preconfigured Nettrine nad Contributte packages.
 
-- https://github.com/contributte/doctrine-skeleton
 - https://github.com/contributte/webapp-skeleton
 - https://github.com/contributte/apitte-skeleton
+
+### 3. Example playground
+
+- https://github.com/contributte/playground (playground)
+- https://contributte.org/examples.html (more examples)
+
+## Other
+
+This repository is inspired by these packages.
+
+- https://github.com/doctrine
+- https://gitlab.com/Kdyby/Doctrine
+- https://gitlab.com/etten/doctrine
+- https://github.com/DTForce/nette-doctrine
+- https://github.com/portiny/doctrine
+
+Thank you guys.
